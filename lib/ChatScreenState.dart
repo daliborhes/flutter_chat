@@ -11,9 +11,8 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    //new
-    for (ChatMessage message in _messages) //new
-      message.animationController.dispose(); //new
+    for (ChatMessage message in _messages)
+      message.animationController.dispose();
     super.dispose(); //new
   }
 
@@ -70,8 +69,8 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
               ? new BoxDecoration( //new
             border: new Border( //new
               top: new BorderSide(color: Colors.grey[200]), //new
-            ), //new
-          ) //new
+            ),
+          )
               : null),
     );
   }
@@ -90,9 +89,9 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                 controller: _textController,
                 onChanged: (String text) { //new
                   setState(() { //new
-                    _isComposing = text.length > 0; //new
-                  }); //new
-                }, //new
+                    _isComposing = text.length > 0;
+                  });
+                },
                 onSubmitted: _handleSubmitted,
                 decoration:
                 new InputDecoration.collapsed(hintText: "Send a message"),
@@ -102,13 +101,13 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                 margin: new EdgeInsets.symmetric(horizontal: 4.0),
                 child: Theme
                     .of(context)
-                    .platform == TargetPlatform.iOS ? //modified
+                    .platform == TargetPlatform.iOS ?
                 new CupertinoButton( //new
                   child: new Text("Send"), //new
                   onPressed: _isComposing //new
-                      ? () => _handleSubmitted(_textController.text) //new
-                      : null,) : //new
-                new IconButton( //modified
+                      ? () => _handleSubmitted(_textController.text)
+                      : null,) :
+                new IconButton(
                   icon: new Icon(Icons.send),
                   onPressed: _isComposing ?
                       () => _handleSubmitted(_textController.text) : null,

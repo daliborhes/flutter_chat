@@ -12,8 +12,8 @@ class ChatMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new SizeTransition(
-        sizeFactor: new CurvedAnimation( //new
-            parent: animationController, curve: Curves.easeOut), //new
+        sizeFactor: new CurvedAnimation(
+            parent: animationController, curve: Curves.easeOut),
         axisAlignment: 0.0, //new
         child: new Container( //modified
           margin: const EdgeInsets.symmetric(vertical: 10.0),
@@ -41,7 +41,7 @@ class ChatMessage extends StatelessWidget {
               ),
             ],
           ),
-        ) //new
+        ),
     );
   }
 }

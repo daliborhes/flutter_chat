@@ -23,7 +23,7 @@ class FriendlychatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: "Friendlychat",
-      theme: defaultTargetPlatform == TargetPlatform.iOS //new
+      theme: defaultTargetPlatform == TargetPlatform.iOS
           ? kIOSTheme //new
           : kDefaultTheme, //new
       //home: new ChatScreen(),
